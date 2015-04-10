@@ -61,7 +61,7 @@ Vagrant.configure("2") do |config|
   #config.vm.network :public_network, :bridge => $network_interface
 
   #ssh conf
-  config.ssh.private_key_path = "~/.ssh/vagrant"
+  config.ssh.private_key_path = "./.ssh/vagrant"
   config.ssh.forward_agent = true
 
   #nfs true or false

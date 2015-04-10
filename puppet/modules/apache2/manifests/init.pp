@@ -13,9 +13,9 @@ class apache2($document_root, $log_directory) {
             File['/etc/apache2/mods-enabled/vhost_alias.load'],
             File['/etc/apache2/mods-enabled/ssl.load'],
             File['/etc/apache2/mods-enabled/ssl.conf'],
-            File['/etc/ssl/private/localdevninja.key'],
-            File['/etc/ssl/private/localdevninja.crt'],
-            File['/etc/ssl/private/localdevninja-intermediate.crt'],
+            #File['/etc/ssl/private/localdevninja.key'],
+            #File['/etc/ssl/private/localdevninja.crt'],
+            #File['/etc/ssl/private/localdevninja-intermediate.crt'],
         ]
     }
 
@@ -86,15 +86,15 @@ class apache2($document_root, $log_directory) {
     #    notify => Service['apache2']
     #}
 
-    file { "/etc/ssl/private/localdevninja.crt":
-        content => template("apache2/localdevninja.crt"),
-        notify => Service['apache2']
-    }
+    #file { "/etc/ssl/private/madepeople.crt":
+    #    content => template("apache2/madepeople.crt"),
+    #    notify => Service['apache2']
+    #}
 
-    file { "/etc/ssl/private/intermediate.crt":
-        content => template("apache2/intermediate.crt"),
-        notify => Service['apache2']
-    }
+    #file { "/etc/ssl/private/intermediate.crt":
+    #    content => template("apache2/intermediate.crt"),
+    #    notify => Service['apache2']
+    #}
 
     service { "apache2":
         ensure => running,
