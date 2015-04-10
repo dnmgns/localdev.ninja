@@ -54,9 +54,6 @@ class drupal {
     drupal::module_add { "libraries": }
     drupal::module_add { "link": }
     drupal::module_add { "markdown": }
-    drupal::module_add { "Image":
-        enableModules => ["Image"]
-    }
     drupal::module_add { "menu_block": }
     drupal::module_add { "menu_position": }
     drupal::module_add { "metatag":
@@ -70,8 +67,6 @@ class drupal {
     drupal::module_add { "transliteration": }
     drupal::module_add { "views":
         enableModules => ["views", "views_ui"]
-    }
-    drupal::module_add { "views_xml":
     }
     drupal::module_add { "webform": }
     drupal::module_add { "webform_validation": }
