@@ -1,0 +1,37 @@
+NameVirtualHost *:80
+NameVirtualHost *:8080
+#NameVirtualHost *:443
+
+<VirtualHost *:80>
+    ServerName www.localdev.ninja
+    ServerAlias *.localdev.ninja
+    UseCanonicalName Off
+    VirtualDocumentRoot <%= @document_root %>/%1/www
+    php_value display_errors On
+    php_value log_errors On
+    php_value error_reporting 30719
+    SetEnv MAGE_IS_DEVELOPER_MODE 1
+    <Directory <%= @document_root %>>
+        Options +FollowSymlinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:8080>
+    ServerName www.localdev.ninja
+    ServerAlias *.localdev.ninja
+    UseCanonicalName Off
+    VirtualDocumentRoot <%= @document_root %>/%1/www
+    php_value display_errors On
+    php_value log_errors On
+    php_value error_reporting 30719
+    SetEnv MAGE_IS_DEVELOPER_MODE 1
+    <Directory <%= @document_root %>>
+        Options +FollowSymlinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>

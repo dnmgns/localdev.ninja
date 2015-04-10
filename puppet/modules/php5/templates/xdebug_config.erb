@@ -1,0 +1,16 @@
+[xdebug]
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=10.10.10.1
+xdebug.remote_port=9000
+xdebug.profiler_output_dir = "<%= @document_root %>/_xdebug"
+xdebug.profiler_enable_trigger=1
+xdebug.overload_var_dump=1
+xdebug.collect_vars=on
+xdebug.collect_params=4
+xdebug.dump_globals=1
+xdebug.dump.GET="*"
+xdebug.dump.POST="*"
+xdebug.dump.SERVER="REQUEST_URI"
+xdebug.show_local_vars=on

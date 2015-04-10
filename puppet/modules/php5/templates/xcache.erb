@@ -1,0 +1,24 @@
+[xcache-common]
+;; install as zend extension (recommended), normally "$extension_dir/xcache.so"
+zend_extension = /usr/lib/php5/20090626+lfs/xcache.so
+
+[xcache]
+xcache.shm_scheme = "mmap"
+xcache.size = 256M
+xcache.count = 1
+xcache.slots = 8K
+xcache.ttl = 3600
+xcache.gc_interval = 300
+
+; Same as aboves but for variable cache
+; If you don’t know for sure that you need this, you probably don’t
+xcache.var_size = 4M
+xcache.var_count = 1
+xcache.var_slots = 8K
+xcache.var_ttl = 0
+xcache.var_maxttl = 0
+xcache.var_gc_interval = 300
+
+xcache.cacher = On
+xcache.stat   = On
+xcache.optimizer = On

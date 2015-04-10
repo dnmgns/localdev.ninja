@@ -1,0 +1,23 @@
+#!/bin/bash
+
+MYSQLINFO="-u root"
+DATE=$( date +%Y%m%d )
+DATE_BEFORE=$( date +%Y%m%d -d "-5 days" )
+BACKUPDIR=mysqlbackup-$DATE
+
+mkdir /vagrant/_mysql-backup/tmp/$BACKUPDIR
+cd $( dirname $0 )
+
+mysql $MYSQLINFO -Bs -e 'SHOW DATABASES' | while read db
+do
+    mysqldump $MYSQLINFO $db > "/vagrant/_mysql-backup/tmp/$BACKUPDIR/$db.sql"
+done
+
+(
+    cd /vagrant/_mysql-backup/tmp && tar zcf $BACKUPDIR.tar.gz $BACKUPDIR
+    chmod 644 $BACKUPDIR.tar.gz
+)
+
+mv /vagrant/_mysql-backup/tmp/$BACKUPDIR.tar.gz /vagrant/_mysql-backup/
+rm -rf /vagrant/_mysql-backup/tmp/$BACKUPDIR
+rm -f /vagrant/_mysql-backup/mysqlbackup-$DATE_BEFORE.tar.gz
