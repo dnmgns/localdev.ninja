@@ -3,12 +3,6 @@
 
 # https://docs.vagrantup.com.
 
-# Network settings
-pref_interface = ['p2p0','en0: Wi-Fi (AirPort)']
-vm_interfaces = %x( VBoxManage list bridgedifs | grep ^Name ).gsub(/Name:\s+/, '').split("\n")
-pref_interface = pref_interface.map {|n| n if vm_interfaces.include?(n)}.compact
-$network_interface = pref_interface[0]
-
 Vagrant.configure("2") do |config|
   ## Choose your base box
   config.vm.box = "dnmgns-debian-7.8.0-amd64-dyn100GB"
@@ -27,7 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
 
   # Display the VirtualBox GUI when booting the machine
-  vb.gui = false
+  vb.gui = true
 
   # Give VM 1/4 system memory & access to all cpu cores on the host
   if RUBY_PLATFORM =~ /darwin/
@@ -52,15 +46,14 @@ Vagrant.configure("2") do |config|
   # Use more than one virtual CPU in guest OS.
   vb.customize ["modifyvm", :id, "--ioapic", "on"]
 
-    # This setting makes it so that network access from inside the vagrant guest
-    # is able to resolve DNS using the hosts VPN connection.
-    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  # This setting makes it so that network access from inside the vagrant guest
+  # is able to resolve DNS using the hosts VPN connection.
+  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 
   end
 
   config.vm.network :private_network, ip: "10.10.10.10"
   config.vm.network :forwarded_port, guest: 80, host: 8080
-  #config.vm.network :public_network, :bridge => $network_interface
 
   #ssh conf
   config.ssh.private_key_path = "./.ssh/vagrant"
