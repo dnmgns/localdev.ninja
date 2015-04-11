@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
 
   # Display the VirtualBox GUI when booting the machine
-  vb.gui = true
+  vb.gui = false
 
   # Give VM 1/4 system memory & access to all cpu cores on the host
   if RUBY_PLATFORM =~ /darwin/

@@ -28,7 +28,7 @@ class base {
     include unzip
     include wget
     include composer
-    include drupal
+    #include drupal
 }
 
 exec { "apt-update":
