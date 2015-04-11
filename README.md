@@ -24,7 +24,4 @@ And in the future it will also be specific versions of these.
 
 ## Usage
 
-Once up 'n running, you can access your site at
-```http://project.localdev.ninja```
-
-Where project is the name of the folder inside ../ from where you launched your localdev.ninja environment.
+Once up 'n running, you can access the site at ```http://project.localdev.ninja``` where project is the name of the folder inside ../ from where you launched your localdev.ninja environment.
