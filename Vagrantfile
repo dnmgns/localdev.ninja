@@ -63,7 +63,7 @@ Vagrant.configure("2") do |config|
   nfs_setting = (RUBY_PLATFORM =~ /linux/ or RUBY_PLATFORM =~ /darwin/)
   
   #www folder
-  config.vm.synced_folder "~/dev/", "/var/www/", id: "vagrant-root", :nfs => nfs_setting
+  config.vm.synced_folder "../", "/var/www/", id: "vagrant-root", :nfs => nfs_setting
 
   # Provisioning: puppet
   #config.puppet_install.puppet_version = :latest
