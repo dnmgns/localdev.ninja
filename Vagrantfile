@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
 
   # Provisioning: puppet
   #config.puppet_install.puppet_version = :latest
-  config.vm.provision :puppet, run: 'once' do |puppet|
+  config.vm.provision :puppet, run: 'always' do |puppet|
     #puppet.options = "--verbose --debug"
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file = "base.pp"
