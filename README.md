@@ -22,7 +22,7 @@ cd ~/dev/localdev.ninja
 vagrant up
 ```
 
-This Vagrant box uses NFS, and it must modify system files on the host. Therefore, at some point during the vagrant up sequence, you may be prompted for administrative privileges (via the typical sudo program). These privileges are used to modify /etc/exports as well as to start and stop the NFS server daemon.
+This Vagrant box uses NFS, if you run Linux or Mac OS X, and it must modify system files on the host. Therefore, at some point during the vagrant up sequence, you may be prompted for administrative privileges (via the typical sudo program). These privileges are used to modify /etc/exports as well as to start and stop the NFS server daemon.
 
 If you don't want to type your password on every vagrant up, Vagrant uses thoughtfully crafted commands to make fine-grained sudoers modifications possible to avoid entering your password.
 
