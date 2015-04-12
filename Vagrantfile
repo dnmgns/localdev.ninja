@@ -56,8 +56,8 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 80, host: 8080
 
   #ssh conf
-  config.ssh.private_key_path = "./.ssh/vagrant"
-  config.ssh.forward_agent = true
+  #config.ssh.private_key_path = "./.ssh/vagrant"
+  #config.ssh.forward_agent = true
 
   #nfs true or false
   nfs_setting = (RUBY_PLATFORM =~ /linux/ or RUBY_PLATFORM =~ /darwin/)
