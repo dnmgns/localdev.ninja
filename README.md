@@ -54,4 +54,10 @@ And in the future it will also be specific versions of these, now we just grab t
 It's also possible to create a drupal installation by uncommenting ```#include drupal``` in ```./puppet/manifests/base.pp```. Make sure that you set your drupal installation variables by editing ```./puppet/modules/drupal/manifests/variables.pp```.
 
 ## Usage
-Once up 'n running, you can access the site at ```http://project.localdev.ninja``` where project is the name of the folder inside ../ from where you launched your localdev.ninja environment.
+Once up 'n running, you can access the site at ```http://project.localdev.ninja``` where project is the name of the directory inside ../project/www/ from where you launched your localdev.ninja environment.
+
+Example for accessing project foobar which resides in ~/dev/foobar/:
+```
+localdev.ninja environment launched with 'vagrant up' command from ~/dev/localdev.ninja/
+browsing to http://foobar.localdev.ninja now uses the document root ~/dev/foobar/www/
+```
