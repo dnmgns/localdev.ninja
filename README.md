@@ -14,14 +14,6 @@ mkdir ~/dev
 git clone https://github.com/dnmgns/localdev.ninja.git ~/dev/
 ```
 
-Launch the web dev environment with ```vagrant up``` from your shell.
-
-Example:
-```
-cd ~/dev/localdev.ninja
-vagrant up
-```
-
 This Vagrant box uses NFS, if you run Linux or Mac OS X, and it must modify system files on the host. Therefore, at some point during the vagrant up sequence, you may be prompted for administrative privileges (via the typical sudo program). These privileges are used to modify /etc/exports as well as to start and stop the NFS server daemon.
 
 If you don't want to type your password on every vagrant up, Vagrant uses thoughtfully crafted commands to make fine-grained sudoers modifications possible to avoid entering your password.
@@ -54,6 +46,14 @@ And in the future it will also be specific versions of these, now we just grab t
 It's also possible to create a drupal installation by uncommenting ```#include drupal``` in ```./puppet/manifests/base.pp```. Make sure that you set your drupal installation variables by editing ```./puppet/modules/drupal/manifests/variables.pp```.
 
 ## Usage
+Launch the web dev environment with ```vagrant up``` from your shell.
+
+Example:
+```
+cd ~/dev/localdev.ninja
+vagrant up
+```
+
 Once up 'n running, you can access the site at ```http://project.localdev.ninja``` where project is the name of the directory inside ../project/www/ from where you launched your localdev.ninja environment.
 
 Example for accessing project foobar which resides in ~/dev/foobar/:
