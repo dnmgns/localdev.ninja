@@ -61,3 +61,25 @@ Example for accessing project foobar which resides in ~/dev/foobar/:
 localdev.ninja environment launched with 'vagrant up' command from ~/dev/localdev.ninja/
 browsing to http://foobar.localdev.ninja now uses the document root ~/dev/foobar/www/
 ```
+
+## Using localdev.ninja with a CMS (RewriteEngine on)
+
+Some Content Management System (CMS) / Web application frameworks uses RewriteEngine, which is then set in the ```.htaccess``` file.
+
+localdev.ninja uses apache2's VirtualDocumentRoot, in order for mod_rewrite to work with relative paths you'll the need to specify which folder the website is based in. This is done with RewriteBase, and you need to set it like this:
+```
+RewriteBase /
+```
+
+Example from Drupal CMS .htaccess:
+```
+  # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
+  # VirtualDocumentRoot and the rewrite rules are not working properly.
+  # For example if your site is at http://example.com/drupal uncomment and
+  # modify the following line:
+  # RewriteBase /drupal
+  #
+  # If your site is running in a VirtualDocumentRoot at http://example.com/,
+  # uncomment the following line:
+  RewriteBase /
+```
