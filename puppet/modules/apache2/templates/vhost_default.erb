@@ -10,8 +10,8 @@ NameVirtualHost *:8080
     php_value display_errors On
     php_value log_errors On
     php_value error_reporting 30719
-    SetEnv MAGE_IS_DEVELOPER_MODE 1
     <Directory <%= @document_root %>>
+        DirectoryIndex index.php index.html index.htm
         Options +FollowSymlinks
         AllowOverride All
         Order allow,deny
@@ -27,8 +27,8 @@ NameVirtualHost *:8080
     php_value display_errors On
     php_value log_errors On
     php_value error_reporting 30719
-    SetEnv MAGE_IS_DEVELOPER_MODE 1
     <Directory <%= @document_root %>>
+        DirectoryIndex index.php index.html index.htm
         Options +FollowSymlinks
         AllowOverride All
         Order allow,deny
