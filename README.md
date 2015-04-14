@@ -30,18 +30,17 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
 
 You can edit the sudoers file by running ```sudo visudo```in your terminal, or with your favorite text editor by editing ```/etc/sudoers```. Note that root permissions is needed.
 
-## localdev ninja environment information
-If you provision the box it will contain as little as possible. From a web dev perspective you're probably interested in the fact that it contains the following software:
-* php
-* mysql
+## Localdev ninja environment information
+If you provision the box it will contain Debian 7.8.0 and as little as possible.
+
+From a web dev perspective you're probably interested in the fact that it contains the following software:
 * apache
+* mysql
+* php
 * composer
 * postfix which relays all mail to mailcatcher
-* rinetd
-* unzip
-* wget
 
-And in the future it will also be specific versions of these, now we just grab the latest versions.
+For now we just grab the latest versions, but in the future these will probably be set to specific versions.
 
 It's also possible to create a drupal installation by uncommenting ```#include drupal``` in ```./puppet/manifests/base.pp```. Make sure that you set your drupal installation variables by editing ```./puppet/modules/drupal/manifests/variables.pp```.
 
