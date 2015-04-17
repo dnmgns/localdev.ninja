@@ -6,7 +6,7 @@
 Vagrant.configure("2") do |config|
   ## Choose your base box
   config.vm.box = "dnmgns-debian-7.8.0-amd64-dyn100GB"
-  #config.vm.box_url = "http://vmbox.localdev.ninja/dnmgns-debian-7.8.0-amd64-dyn100GB.box"
+  config.vm.box_url = "http://vmbox.localdev.ninja/dnmgns-debian-7.8.0-amd64-dyn100GB.box"
   config.vm.box_check_update = true
 
   # Automatic box update checking.
