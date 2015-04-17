@@ -30,6 +30,18 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
 
 You can edit the sudoers file by running ```sudo visudo```in your terminal, or with your favorite text editor by editing ```/etc/sudoers```. Note that root permissions is needed.
 
+## HTTPS - Self-signed SSL certificate
+
+Note: If you don't want to use HTTPS you may skip this step.
+
+We're using a self-signed cert, you'll want to install the certificate into your certificate store. Otherwise you'll get a warning that the certificate is not trusted when browsing localninja.dev and using HTTPS.
+
+On a Mac (that's what everyone uses, right?) you'll trust the certificate by launching your terminal and typing the below command. This will work given that you installed the localdev.ninja at the recommended path (~/dev/), otherwise you'll need to update this path in the command.
+
+```cd ~/dev/localdev.ninja/puppet/modules/apache2/templates/ && sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "./localdev.ninja.pem"```
+
+Browsing your localdev.ninja site with HTTPS should now work fine without any 'certificate not trusted' warning.
+
 ## localdev ninja environment information
 If you provision the box it will contain as little as possible. From a web dev perspective you're probably interested in the fact that it contains the following software:
 * php
