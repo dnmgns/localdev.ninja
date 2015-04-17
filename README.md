@@ -1,5 +1,3 @@
-One local webdev environment to rule them all.
-
 ## Prerequisites
 1. [Vagrant 1.7.2](https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2.dmg)
 2. [Virtual Box 4.3.26](http://download.virtualbox.org/virtualbox/4.3.26)
