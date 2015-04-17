@@ -5,8 +5,13 @@
 # Debian etch). See /usr/share/doc/apache2.2-common/NEWS.Debian.gz and
 # README.Debian.gz
 
+#non-ssl
 Listen 10.10.10.10:80
 Listen 127.0.0.1:8080
+
+#ssl
+Listen 10.10.10.10:443
+Listen 127.0.0.1:4443
 
 <IfModule mod_ssl.c>
     # If you add NameVirtualHost *:443 here, you will also have to change
