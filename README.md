@@ -4,7 +4,25 @@ One local webdev environment to rule them all.
 1. [Vagrant 1.7.2](https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2.dmg)
 2. [Virtual Box 4.3.26](http://download.virtualbox.org/virtualbox/4.3.26)
 
+## Environment information
+If you provision the box it will contain Debian 7.8.0 and as little as possible.
+
+From a web dev perspective you're probably interested in the fact that it contains the following software:
+* php
+* mysql
+* apache
+* mysql
+* php
+* composer
+* postfix which relays all mail to mailcatcher
+
+For now we just grab the latest versions, but in the future these will probably be set to specific versions.
+
+It's also possible to create a drupal installation by uncommenting ```#include drupal``` in ```./puppet/manifests/base.pp```. Make sure that you set your drupal installation variables by editing ```./puppet/modules/drupal/manifests/variables.pp```.
+
 ## Installation
+First, make sure that you've installed the above prerequisites.
+
 Git clone to a folder of your choice. The environment (apache2) assumes that all your hosted projects are located at ```../``` from where you put the environment.
 ```~/dev``` is recommended.
 
@@ -30,21 +48,17 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
 
 You can edit the sudoers file by running ```sudo visudo```in your terminal, or with your favorite text editor by editing ```/etc/sudoers```. Note that root permissions is needed.
 
-## Localdev ninja environment information
-If you provision the box it will contain Debian 7.8.0 and as little as possible.
+## Username and passwords
+#Linux
+username: root
+password: vagrant
 
-From a web dev perspective you're probably interested in the fact that it contains the following software:
-* php
-* mysql
-* apache
-* mysql
-* php
-* composer
-* postfix which relays all mail to mailcatcher
+username: vagrant
+password: root
 
-For now we just grab the latest versions, but in the future these will probably be set to specific versions.
-
-It's also possible to create a drupal installation by uncommenting ```#include drupal``` in ```./puppet/manifests/base.pp```. Make sure that you set your drupal installation variables by editing ```./puppet/modules/drupal/manifests/variables.pp```.
+#MySQL
+username: root
+<no password is set>
 
 ## HTTPS - Self-signed SSL certificate
 Note: If you don't want to use HTTPS you may skip this step.
