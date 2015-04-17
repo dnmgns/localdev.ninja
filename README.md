@@ -47,14 +47,14 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
 You can edit the sudoers file by running ```sudo visudo```in your terminal, or with your favorite text editor by editing ```/etc/sudoers```. Note that root permissions is needed.
 
 ## Username and passwords
-#Linux
+###Linux
 username: root
 password: vagrant
 
 username: vagrant
 password: root
 
-#MySQL
+###MySQL
 username: root
 <no password is set>
 
