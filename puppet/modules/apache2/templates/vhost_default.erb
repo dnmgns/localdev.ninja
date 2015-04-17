@@ -1,6 +1,6 @@
 NameVirtualHost *:80
 NameVirtualHost *:8080
-#NameVirtualHost *:443
+NameVirtualHost *:443
 
 <VirtualHost *:80>
     ServerName www.localdev.ninja
@@ -20,6 +20,30 @@ NameVirtualHost *:8080
 </VirtualHost>
 
 <VirtualHost *:8080>
+    ServerName www.localdev.ninja
+    ServerAlias *.localdev.ninja
+    UseCanonicalName Off
+    VirtualDocumentRoot <%= @document_root %>/%1/www
+    php_value display_errors On
+    php_value log_errors On
+    php_value error_reporting 30719
+    <Directory <%= @document_root %>>
+        DirectoryIndex index.php index.html index.htm
+        Options +FollowSymlinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:443>
+    SSLEngine On
+    SSLProtocol all
+    SSLCompression on
+    SSLCipherSuite HIGH:MEDIUM
+    SSLCertificateFile /etc/ssl/private/localdev.ninja.pem
+    SSLCertificateKeyFile /etc/ssl/private/localdev.ninja.key
+    RequestHeader set X_FORWARDED_PROTO 'https'
     ServerName www.localdev.ninja
     ServerAlias *.localdev.ninja
     UseCanonicalName Off
