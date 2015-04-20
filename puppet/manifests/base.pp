@@ -3,12 +3,13 @@ group {
 }
 
 class { "apache2":
-    document_root => "/var/www",
+    document_root => "/var/www/",
     log_directory => "_logs"
 }
 
 class { "php5":
-    document_root => "/var/www/"
+    document_root => "/var/www/",
+    xdebug_directory => "_xdebug"
 }
 
 class { "composer":

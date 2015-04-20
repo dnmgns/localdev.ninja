@@ -1,4 +1,4 @@
-class php5($document_root) {
+class php5($document_root, $xdebug_directory) {
     package {
         ["php5-cli", "php5-common", "php5-curl", "php5-gd", "php5-imagick", "php5-imap", "php5-mcrypt", "php5-mysql", "php-apc", "php5-xdebug", "libapache2-mod-php5", "php-pear"]:
             ensure => latest,
@@ -7,7 +7,7 @@ class php5($document_root) {
         ]
     }
 
-    file { "/vagrant/_xdebug":
+    file { "/vagrant/$xdebug_directory":
         ensure => 'directory'
     }
 
