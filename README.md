@@ -46,6 +46,18 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
 
 You can edit the sudoers file by running ```sudo visudo```in your terminal, or with your favorite text editor by editing ```/etc/sudoers```. Note that root permissions is needed.
 
+## Quick start
+
+Basically, getting the box up and running:
+git clone https://github.com/dnmgns/localdev.ninja.git ~/dev/localdev.ninja/
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install caskroom/cask/brew-cask
+brew cask install virtualbox
+brew cask install vagrant
+cd ~/dev/localdev.ninja/ && vagrant up
+```
+
 ## Username and passwords
 ###Linux
 username: root
