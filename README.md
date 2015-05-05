@@ -49,8 +49,8 @@ You can edit the sudoers file by running ```sudo visudo```in your terminal, or w
 ## Quick start
 
 Basically, getting the box up and running:
-git clone https://github.com/dnmgns/localdev.ninja.git ~/dev/localdev.ninja/
 ```
+git clone https://github.com/dnmgns/localdev.ninja.git ~/dev/localdev.ninja/
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install caskroom/cask/brew-cask
 brew cask install virtualbox
