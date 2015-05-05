@@ -16,6 +16,9 @@ Vagrant.configure("2") do |config|
   config.vm.define "webdev" do |webdev|
   end
 
+  # SSH Password
+  config.ssh.password = "vagrant"
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant.
   config.vm.provider "virtualbox" do |vb|
