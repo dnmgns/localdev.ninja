@@ -82,7 +82,7 @@ On a Mac (that's what everyone uses, right?) you'll trust the certificate by lau
 Browsing your localdev.ninja site with HTTPS should now work fine without any 'certificate not trusted' warning.
 
 ## Usage
-Launch the web dev environment with ```vagrant up``` from your shell.
+CD into the project directory and launch the web dev environment with ```vagrant up``` from your shell.
 
 Example:
 ```
