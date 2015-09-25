@@ -29,7 +29,7 @@ class base {
     include unzip
     include wget
     include composer
-    #include drupal
+    include git
 }
 
 exec { "apt-update":
