@@ -16,8 +16,6 @@ From a web dev perspective you're probably interested in the fact that it contai
 
 For now we just grab the latest versions, but in the future these will probably be set to specific versions.
 
-It's also possible to create a drupal installation by uncommenting ```#include drupal``` in ```./puppet/manifests/base.pp```. Make sure that you set your drupal installation variables by editing ```./puppet/modules/drupal/manifests/variables.pp```.
-
 ## Installation
 First, make sure that you've installed the above prerequisites.
 
